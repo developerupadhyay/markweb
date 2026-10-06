@@ -59,7 +59,7 @@ export default function InfrastructurePage() {
             <Factory className="w-4 h-4 text-amber-400" />
             <span>State-of-the-Art Faridabad Plant</span>
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white">
+          <h1 className="h1-fluid font-black tracking-tight text-white leading-tight">
             Manufacturing Infrastructure & Quality Control
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto">
@@ -133,7 +133,7 @@ export default function InfrastructurePage() {
 
         {/* Bottom CTA */}
         <div className="text-center bg-sky-50 border border-sky-200 rounded-3xl p-8 sm:p-10 space-y-4">
-          <h3 className="text-2xl font-black text-slate-900">
+          <h3 className="h3-fluid font-black text-slate-900">
             Schedule a Physical Factory Visit & Live Machine Demo
           </h3>
           <p className="text-slate-600 text-sm max-w-xl mx-auto">
@@ -142,10 +142,10 @@ export default function InfrastructurePage() {
           <div className="pt-2">
             <Link
               href="/contact-us"
-              className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-6 py-3.5 rounded-xl shadow text-sm"
+              className="btn-secondary"
             >
               <span>Book a Plant Visit</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-amber-400" />
             </Link>
           </div>
         </div>

@@ -54,7 +54,7 @@ export default function ContactPage() {
             <Factory className="w-4 h-4 text-amber-400" />
             <span>Manufacturing Plant & Corporate Office</span>
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white">
+          <h1 className="h1-fluid font-black tracking-tight text-white leading-tight">
             Contact Krishna Packaging Industry
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto">
@@ -293,16 +293,16 @@ export default function ContactPage() {
                   <div className="pt-2 flex flex-col sm:flex-row gap-3">
                     <button
                       type="submit"
-                      className="flex-1 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold py-3.5 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm"
+                      className="btn-primary flex-1 py-4 text-sm"
                     >
-                      <Send className="w-4 h-4" />
+                      <Send className="w-4 h-4 text-slate-950" />
                       <span>Submit Inquiry</span>
                     </button>
 
                     <button
                       type="button"
                       onClick={handleWhatsAppChat}
-                      className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm"
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-6 rounded-2xl shadow-md transition-all flex items-center justify-center gap-2 text-sm"
                     >
                       <MessageSquare className="w-4 h-4" />
                       <span>Message on WhatsApp</span>

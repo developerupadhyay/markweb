@@ -45,17 +45,17 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct }: QuoteMod
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200">
       <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden max-h-[92vh] flex flex-col">
         {/* Modal Header */}
-        <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-sky-950 p-6 text-white flex items-center justify-between">
+        <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-sky-950 p-5 sm:p-6 text-white flex items-center justify-between border-b border-slate-800">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400">
+            <div className="w-10 h-10 rounded-2xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400">
               <Factory className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-white">Request Factory Direct Quotation</h3>
-              <p className="text-xs text-slate-300">
+              <h3 className="text-base sm:text-lg font-black text-white leading-tight">Request Factory Direct Quotation</h3>
+              <p className="text-xs text-slate-300 mt-0.5">
                 Get best FOB / Ex-Factory pricing with custom tooling specifications
               </p>
             </div>
@@ -75,15 +75,15 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct }: QuoteMod
               <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
                 <CheckCircle className="w-10 h-10" />
               </div>
-              <h4 className="text-2xl font-bold text-slate-900">Quotation Inquiry Received!</h4>
-              <p className="text-slate-600 text-sm max-w-md mx-auto">
+              <h4 className="text-2xl font-black text-slate-900">Quotation Inquiry Received!</h4>
+              <p className="text-slate-600 text-sm max-w-md mx-auto leading-relaxed">
                 Thank you, <strong>{name || "Valued Customer"}</strong>. Our technical engineering team at Faridabad will review your pouch dimensions and contact you at <strong>{phone || email}</strong> shortly with technical drawings and quote breakdown.
               </p>
 
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <button
                   onClick={handleWhatsAppQuote}
-                  className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-xl flex items-center justify-center gap-2 text-sm shadow-md"
+                  className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3.5 rounded-2xl flex items-center justify-center gap-2 text-sm shadow-md transition-all"
                 >
                   <MessageSquare className="w-4 h-4" />
                   Instant WhatsApp Follow-up
@@ -93,7 +93,7 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct }: QuoteMod
                     setSubmitted(false);
                     onClose();
                   }}
-                  className="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold px-6 py-3 rounded-xl text-sm"
+                  className="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-6 py-3.5 rounded-2xl text-sm transition-all"
                 >
                   Close Window
                 </button>
@@ -103,13 +103,13 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct }: QuoteMod
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Product Select */}
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
+                <label className="block text-xs font-bold text-slate-700 mb-1.5">
                   Select Packaging Machine Model *
                 </label>
                 <select
                   value={selectedProduct}
                   onChange={(e) => setSelectedProduct(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-2xl text-sm font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 >
                   {productsData.map((prod) => (
                     <option key={prod.id} value={prod.name}>
@@ -132,7 +132,7 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct }: QuoteMod
                     placeholder="e.g., Rajesh Sharma"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    className="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
                   />
                 </div>
 
@@ -146,7 +146,7 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct }: QuoteMod
                     placeholder="e.g., +91 98185 42091"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    className="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
                   />
                 </div>
 
@@ -159,7 +159,7 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct }: QuoteMod
                     placeholder="e.g., name@company.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    className="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
                   />
                 </div>
 
@@ -172,7 +172,7 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct }: QuoteMod
                     placeholder="e.g., Faridabad, Haryana"
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
-                    className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    className="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
                   />
                 </div>
 
@@ -185,7 +185,7 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct }: QuoteMod
                     placeholder="e.g., Spices, Namkeen, Besan, Biscuits"
                     value={productMaterial}
                     onChange={(e) => setProductMaterial(e.target.value)}
-                    className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    className="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
                   />
                 </div>
 
@@ -198,7 +198,7 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct }: QuoteMod
                     placeholder="e.g., 50g, 250g, 1kg pouches"
                     value={pouchWeight}
                     onChange={(e) => setPouchWeight(e.target.value)}
-                    className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    className="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
                   />
                 </div>
               </div>
@@ -213,11 +213,11 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct }: QuoteMod
                   placeholder="Need pneumatic batch cutting, nitrogen flush, extra pouch collar, or delivery schedule..."
                   value={comments}
                   onChange={(e) => setComments(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 />
               </div>
 
-              <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl flex items-center gap-2 text-xs text-amber-900">
+              <div className="p-3 bg-amber-50 border border-amber-200 rounded-2xl flex items-center gap-2.5 text-xs text-amber-900">
                 <ShieldCheck className="w-4 h-4 text-amber-600 flex-shrink-0" />
                 <span>
                   All machines manufactured with food-grade SS-316/304 parts & 1-Year comprehensive factory warranty.
@@ -228,19 +228,19 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct }: QuoteMod
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <button
                   type="submit"
-                  className="flex-1 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold py-3 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm"
+                  className="btn-primary flex-1 py-3.5 text-sm"
                 >
                   <Send className="w-4 h-4" />
-                  Submit Official Inquiry
+                  <span>Submit Official Inquiry</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={handleWhatsAppQuote}
-                  className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm"
+                  className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-2xl shadow-md transition-all flex items-center justify-center gap-2 text-sm"
                 >
                   <MessageSquare className="w-4 h-4" />
-                  Quote on WhatsApp
+                  <span>WhatsApp Quote</span>
                 </button>
               </div>
             </form>

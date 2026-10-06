@@ -2,16 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+@layer base {
+  :root {
+    --background: #f8fafc;
+    --foreground: #0f172a;
+    --color-primary: #0f172a;
+    --color-accent: #f59e0b;
+    --color-sky: #0284c7;
+    --color-emerald: #10b981;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* Fluid typography for high-impact responsive headings */
+  h1, .h1-fluid {
+    font-size: clamp(2rem, 4.5vw + 0.5rem, 3.75rem);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    font-weight: 900;
+  }
+
+  h2, .h2-fluid {
+    font-size: clamp(1.6rem, 3vw + 0.5rem, 2.75rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+  }
+
+  h3, .h3-fluid {
+    font-size: clamp(1.25rem, 2vw + 0.4rem, 1.85rem);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    font-weight: 700;
+  }
+
+  h4, .h4-fluid {
+    font-size: clamp(1.05rem, 1.2vw + 0.3rem, 1.35rem);
+    line-height: 1.35;
+    font-weight: 700;
+  }
 }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  overflow-x: hidden;
+@layer components {
+  /* Industrial Button System */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-black px-6 py-3.5 rounded-2xl shadow-lg shadow-amber-500/20 hover:shadow-amber-500/35 active:scale-[0.98] transition-all duration-200 text-sm tracking-wide;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-6 py-3.5 rounded-2xl shadow-md hover:shadow-lg active:scale-[0.98] transition-all duration-200 text-sm tracking-wide border border-slate-700/60;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-3.5 rounded-2xl border border-white/20 backdrop-blur-md hover:border-white/40 active:scale-[0.98] transition-all duration-200 text-sm;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-1.5 text-slate-700 hover:text-sky-600 hover:bg-slate-100 font-semibold px-4 py-2 rounded-xl transition-all duration-200 text-sm;
+  }
+
+  /* Badge System */
+  .badge-amber {
+    @apply inline-flex items-center gap-1.5 bg-amber-500/15 text-amber-900 font-bold px-3 py-1 rounded-xl text-xs border border-amber-500/30 shadow-sm;
+  }
+
+  .badge-sky {
+    @apply inline-flex items-center gap-1.5 bg-sky-50 text-sky-800 font-bold px-3 py-1 rounded-xl text-xs border border-sky-200 shadow-sm;
+  }
+
+  .badge-emerald {
+    @apply inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-800 font-bold px-3 py-1 rounded-xl text-xs border border-emerald-200 shadow-sm;
+  }
+
+  .badge-dark {
+    @apply inline-flex items-center gap-1.5 bg-slate-900 text-white font-bold px-3 py-1 rounded-xl text-xs border border-slate-700 shadow-sm;
+  }
+
+  /* Card Hover Lift */
+  .card-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
 }
 
 /* Custom modern industrial styling */
@@ -20,39 +103,39 @@ body {
 }
 
 .hero-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.18) 0%, rgba(15, 23, 42, 0) 70%);
 }
 
 .accent-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.18) 0%, rgba(15, 23, 42, 0) 70%);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
 }
 
 .dark-glass-card {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .grid-pattern {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
 }
 
 .dark-grid-pattern {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
 /* Custom scrollbars */
@@ -74,11 +157,18 @@ body {
   background: #94a3b8;
 }
 
+/* Keyframe Animations */
 @keyframes pulse-subtle {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.85; transform: scale(1.03); }
+  50% { opacity: 0.9; transform: scale(1.02); }
 }
 
 .animate-pulse-subtle {
   animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+/* Focus Ring Utility */
+*:focus-visible {
+  outline: 2px solid #f59e0b;
+  outline-offset: 2px;
 }

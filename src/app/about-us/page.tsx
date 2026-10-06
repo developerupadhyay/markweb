@@ -33,11 +33,11 @@ export default function AboutUsPage() {
       <section className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 text-white py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 dark-grid-pattern opacity-30 pointer-events-none"></div>
         <div className="max-w-7xl mx-auto relative z-10 text-center">
-          <span className="inline-flex items-center gap-2 bg-amber-500/20 text-amber-300 border border-amber-500/30 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 bg-amber-500/20 text-amber-300 border border-amber-500/30 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-4">
             <Factory className="w-4 h-4 text-amber-400" />
             <span>Excellence in Packaging Automation Since 2010</span>
-          </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white">
+          </div>
+          <h1 className="h1-fluid font-black tracking-tight text-white leading-tight">
             About Krishna Packaging Industry
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mt-3">
@@ -87,11 +87,11 @@ export default function AboutUsPage() {
 
             {/* Right Story Content */}
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 text-sky-700 bg-sky-50 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 text-sky-700 bg-sky-50 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-sky-100">
                 <span>Who We Are</span>
               </div>
 
-              <h2 className="text-3xl font-black text-slate-900 leading-tight">
+              <h2 className="h2-fluid font-black text-slate-900 leading-tight">
                 Pioneering Precision Packaging Solutions for Over a Decade
               </h2>
 
@@ -251,7 +251,7 @@ export default function AboutUsPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto text-center space-y-6">
-          <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
+          <h3 className="h3-fluid font-black text-slate-900">
             Ready to Partner with Krishna Packaging Industry?
           </h3>
           <p className="text-slate-600 text-sm max-w-xl mx-auto">
@@ -261,18 +261,18 @@ export default function AboutUsPage() {
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <Link
               href="/our-products"
-              className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-7 py-3.5 rounded-xl shadow transition-all flex items-center gap-2 text-sm"
+              className="btn-primary"
             >
               <span>Explore Products Catalog</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-slate-950" />
             </Link>
 
             <Link
               href="/contact-us"
-              className="bg-slate-900 hover:bg-slate-800 text-white font-bold px-7 py-3.5 rounded-xl shadow transition-all flex items-center gap-2 text-sm"
+              className="btn-secondary"
             >
               <span>Contact Factory Office</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-amber-400" />
             </Link>
           </div>
         </div>

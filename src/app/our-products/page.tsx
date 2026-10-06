@@ -78,7 +78,7 @@ export default function ProductsPage() {
             <span>Complete Packaging Machinery Portfolio • {productsData.length} Models</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white">
+          <h1 className="h1-fluid font-black tracking-tight text-white leading-tight">
             Packaging Machinery Catalog
           </h1>
 

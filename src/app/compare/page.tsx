@@ -53,7 +53,7 @@ export default function ComparePage() {
             <SlidersHorizontal className="w-4 h-4 text-amber-400" />
             <span>Interactive Machine Comparison Matrix</span>
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white">
+          <h1 className="h1-fluid font-black tracking-tight text-white leading-tight">
             Compare Krishna Packaging Machines
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto">
@@ -140,22 +140,22 @@ export default function ComparePage() {
                   <span className="text-base font-black text-amber-600 block mt-1">{m.priceRange}</span>
                 </div>
 
-                <div className="pt-2 flex flex-col gap-1.5">
+                <div className="pt-2 flex flex-col gap-2">
                   <Link
                     href={`/our-products/${m.slug}`}
-                    className="bg-slate-900 hover:bg-slate-800 text-white font-bold py-2 rounded-xl text-xs flex items-center justify-center gap-1"
+                    className="btn-secondary py-2.5 text-xs"
                   >
                     <span>Full Details</span>
-                    <ArrowRight className="w-3 h-3" />
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                   <button
                     onClick={() => {
                       setQuoteProduct(m.name);
                       setQuoteOpen(true);
                     }}
-                    className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold py-2 rounded-xl text-xs flex items-center justify-center gap-1"
+                    className="btn-primary py-2.5 text-xs"
                   >
-                    <FileText className="w-3 h-3" />
+                    <FileText className="w-3.5 h-3.5" />
                     <span>Get Quote</span>
                   </button>
                 </div>

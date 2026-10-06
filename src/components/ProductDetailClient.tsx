@@ -51,7 +51,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* Breadcrumb Strip */}
-      <div className="bg-white border-b border-slate-200 py-3 px-4 sm:px-6 lg:px-8">
+      <div className="bg-white border-b border-slate-200 py-3.5 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs text-slate-500 overflow-x-auto">
           <Link href="/" className="hover:text-slate-900 font-medium">Home</Link>
           <ChevronRight className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
@@ -69,10 +69,10 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
             {/* Active Image Box */}
             <div className="relative h-96 sm:h-[480px] bg-white rounded-3xl border border-slate-200 p-6 flex items-center justify-center shadow-lg overflow-hidden group">
               <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
-                <span className="bg-slate-900 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-xl shadow">
+                <span className="bg-slate-900 text-white text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-xl shadow-md">
                   {product.category}
                 </span>
-                <span className="bg-sky-50 border border-sky-200 text-sky-800 text-xs font-bold px-2.5 py-1 rounded-xl flex items-center gap-1">
+                <span className="bg-sky-50 border border-sky-200 text-sky-800 text-xs font-black px-3 py-1 rounded-xl flex items-center gap-1.5 shadow-sm">
                   <Gauge className="w-3.5 h-3.5 text-sky-600" />
                   {product.speed}
                 </span>
@@ -85,11 +85,11 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                   fill
                   sizes="(max-width: 768px) 100vw, 600px"
                   priority
-                  className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
+                  className="object-contain p-3 group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
-              <div className="absolute bottom-4 right-4 z-10 bg-slate-900/80 backdrop-blur-sm text-amber-400 text-[11px] font-semibold px-3 py-1 rounded-lg">
+              <div className="absolute bottom-4 right-4 z-10 bg-slate-900/90 backdrop-blur-sm text-amber-400 text-xs font-bold px-3 py-1 rounded-xl shadow">
                 Faridabad Factory Made
               </div>
             </div>
@@ -103,7 +103,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                     onClick={() => setActiveImage(img)}
                     className={`relative w-20 h-20 bg-white rounded-2xl border-2 overflow-hidden flex-shrink-0 p-1 transition-all ${
                       (activeImage || product.primaryImage) === img
-                        ? "border-amber-500 ring-2 ring-amber-500/20 shadow-md"
+                        ? "border-amber-500 ring-2 ring-amber-500/20 shadow-md scale-105"
                         : "border-slate-200 hover:border-slate-400"
                     }`}
                   >
@@ -121,27 +121,27 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
 
             {/* Factory Quality Badges */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-              <div className="p-3 bg-white border border-slate-200 rounded-2xl flex items-center gap-2.5">
+              <div className="p-3.5 bg-white border border-slate-200 rounded-2xl flex items-center gap-3 shadow-sm">
                 <ShieldCheck className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                <div className="text-[11px]">
-                  <strong className="block text-slate-900">GMP Grade</strong>
-                  <span className="text-slate-500">SS-316/304</span>
+                <div className="text-xs">
+                  <strong className="block text-slate-900 font-extrabold">GMP Grade</strong>
+                  <span className="text-slate-500 font-medium">SS-316/304</span>
                 </div>
               </div>
 
-              <div className="p-3 bg-white border border-slate-200 rounded-2xl flex items-center gap-2.5">
+              <div className="p-3.5 bg-white border border-slate-200 rounded-2xl flex items-center gap-3 shadow-sm">
                 <Clock className="w-5 h-5 text-sky-600 flex-shrink-0" />
-                <div className="text-[11px]">
-                  <strong className="block text-slate-900">Lead Time</strong>
-                  <span className="text-slate-500">{product.deliveryTime}</span>
+                <div className="text-xs">
+                  <strong className="block text-slate-900 font-extrabold">Lead Time</strong>
+                  <span className="text-slate-500 font-medium">{product.deliveryTime}</span>
                 </div>
               </div>
 
-              <div className="p-3 bg-white border border-slate-200 rounded-2xl flex items-center gap-2.5 col-span-2 sm:col-span-1">
+              <div className="p-3.5 bg-white border border-slate-200 rounded-2xl flex items-center gap-3 shadow-sm col-span-2 sm:col-span-1">
                 <Truck className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-                <div className="text-[11px]">
-                  <strong className="block text-slate-900">Dispatch</strong>
-                  <span className="text-slate-500">PAN India & Export</span>
+                <div className="text-xs">
+                  <strong className="block text-slate-900 font-extrabold">Dispatch</strong>
+                  <span className="text-slate-500 font-medium">PAN India & Export</span>
                 </div>
               </div>
             </div>
@@ -153,7 +153,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
               <span className="text-xs font-bold text-sky-700 uppercase tracking-widest block">
                 Industrial Packaging Automation
               </span>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 mt-1 leading-tight">
+              <h1 className="h2-fluid text-slate-900 font-black mt-1 leading-tight">
                 {product.name}
               </h1>
               <p className="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
@@ -162,24 +162,24 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
             </div>
 
             {/* Price Box */}
-            <div className="bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border border-amber-300/80 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div className="bg-gradient-to-r from-amber-500/15 via-amber-500/5 to-transparent border border-amber-300 rounded-3xl p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
               <div>
-                <span className="text-[11px] font-bold text-amber-900 uppercase tracking-wider block">
+                <span className="text-xs font-bold text-amber-900 uppercase tracking-wider block">
                   Product Details / Price Range
                 </span>
                 <span className="text-2xl sm:text-3xl font-black text-amber-600 block mt-0.5">
                   {product.priceRange}
                 </span>
-                <span className="text-xs text-slate-600 block mt-0.5">
+                <span className="text-xs text-slate-600 block mt-0.5 font-medium">
                   (Official Listing: {product.priceRaw})
                 </span>
               </div>
 
               <div className="text-left sm:text-right">
-                <span className="text-[11px] font-semibold text-slate-500 block">
+                <span className="text-xs font-semibold text-slate-500 block">
                   Minimum Order Quantity
                 </span>
-                <span className="text-sm font-bold text-slate-900 bg-white px-2.5 py-1 rounded-lg border border-slate-200 inline-block mt-0.5">
+                <span className="text-sm font-black text-slate-900 bg-white px-3 py-1.5 rounded-xl border border-slate-200 inline-block mt-1 shadow-sm">
                   {product.minOrderQuantity}
                 </span>
               </div>
@@ -187,42 +187,42 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
 
             {/* Quick Specs Matrix */}
             <div className="grid grid-cols-2 gap-3 text-xs">
-              <div className="p-3 bg-white rounded-2xl border border-slate-200">
+              <div className="p-3.5 bg-white rounded-2xl border border-slate-200 shadow-sm">
                 <div className="flex items-center gap-1.5 text-slate-500 mb-1">
-                  <Gauge className="w-3.5 h-3.5 text-sky-600" />
-                  <span className="font-semibold text-[10px] uppercase">Packaging Speed</span>
+                  <Gauge className="w-4 h-4 text-sky-600" />
+                  <span className="font-bold text-[10px] uppercase">Packaging Speed</span>
                 </div>
-                <span className="font-extrabold text-slate-900 text-sm block">{product.speed}</span>
+                <span className="font-black text-slate-900 text-sm block">{product.speed}</span>
               </div>
 
-              <div className="p-3 bg-white rounded-2xl border border-slate-200">
+              <div className="p-3.5 bg-white rounded-2xl border border-slate-200 shadow-sm">
                 <div className="flex items-center gap-1.5 text-slate-500 mb-1">
-                  <Layers className="w-3.5 h-3.5 text-amber-600" />
-                  <span className="font-semibold text-[10px] uppercase">Filling System</span>
+                  <Layers className="w-4 h-4 text-amber-600" />
+                  <span className="font-bold text-[10px] uppercase">Filling System</span>
                 </div>
-                <span className="font-extrabold text-slate-900 text-sm block">{product.fillingSystem}</span>
+                <span className="font-black text-slate-900 text-sm block">{product.fillingSystem}</span>
               </div>
 
-              <div className="p-3 bg-white rounded-2xl border border-slate-200">
+              <div className="p-3.5 bg-white rounded-2xl border border-slate-200 shadow-sm">
                 <div className="flex items-center gap-1.5 text-slate-500 mb-1">
-                  <Zap className="w-3.5 h-3.5 text-emerald-600" />
-                  <span className="font-semibold text-[10px] uppercase">Power Rating</span>
+                  <Zap className="w-4 h-4 text-emerald-600" />
+                  <span className="font-bold text-[10px] uppercase">Power Rating</span>
                 </div>
-                <span className="font-extrabold text-slate-900 text-sm block">{product.powerRequired}</span>
+                <span className="font-black text-slate-900 text-sm block">{product.powerRequired}</span>
               </div>
 
-              <div className="p-3 bg-white rounded-2xl border border-slate-200">
+              <div className="p-3.5 bg-white rounded-2xl border border-slate-200 shadow-sm">
                 <div className="flex items-center gap-1.5 text-slate-500 mb-1">
-                  <Weight className="w-3.5 h-3.5 text-purple-600" />
-                  <span className="font-semibold text-[10px] uppercase">Machine Gross Weight</span>
+                  <Weight className="w-4 h-4 text-purple-600" />
+                  <span className="font-bold text-[10px] uppercase">Machine Gross Weight</span>
                 </div>
-                <span className="font-extrabold text-slate-900 text-sm block">{product.machineWeight}</span>
+                <span className="font-black text-slate-900 text-sm block">{product.machineWeight}</span>
               </div>
             </div>
 
             {/* Suitable Products / Target Materials */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-2.5">
                 Suitable Products & Materials:
               </h4>
               <div className="flex flex-wrap gap-2">
@@ -241,7 +241,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
             <div className="pt-2 flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => setQuoteOpen(true)}
-                className="flex-1 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-black py-4 px-6 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm active:scale-95"
+                className="btn-primary flex-1 py-4 text-sm"
               >
                 <FileText className="w-4 h-4 text-slate-950" />
                 <span>Request Quotation</span>
@@ -257,7 +257,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
 
               <button
                 onClick={() => setBrochureOpen(true)}
-                className="bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-4 rounded-2xl transition-all flex items-center justify-center gap-1.5 text-xs"
+                className="btn-secondary py-4 px-4 text-xs"
                 title="Download Spec Sheet"
               >
                 <Download className="w-4 h-4 text-amber-400" />
@@ -276,7 +276,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
             <span className="text-xs font-bold text-sky-700 uppercase tracking-wider block">
               Engineering Blueprint
             </span>
-            <h2 className="text-2xl font-black text-slate-900">
+            <h2 className="h2-fluid text-slate-900 font-black">
               Technical Specifications ({product.name})
             </h2>
           </div>
@@ -317,7 +317,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
         {/* Product Description & Features */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-7 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-md space-y-4">
-            <h3 className="text-xl font-bold text-slate-900">
+            <h3 className="text-xl font-black text-slate-900">
               Product Overview & Design Architecture
             </h3>
             <p className="text-slate-700 text-sm leading-relaxed whitespace-pre-line">
@@ -364,7 +364,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
             <div className="space-y-3 pt-4">
               <button
                 onClick={() => setQuoteOpen(true)}
-                className="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold py-3.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow"
+                className="btn-primary w-full py-4 text-xs"
               >
                 <span>Request Custom Machine Quote</span>
                 <ArrowRight className="w-4 h-4" />
@@ -372,7 +372,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
 
               <a
                 href={`tel:${companyData.phones[0]}`}
-                className="w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 border border-white/20"
+                className="btn-outline w-full py-3 text-xs"
               >
                 <Phone className="w-4 h-4 text-amber-400" />
                 <span>Call Factory: {companyData.displayPhones[0]}</span>
@@ -388,7 +388,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
               <span className="text-xs font-bold text-sky-700 uppercase tracking-wider block">
                 Explore More Machinery
               </span>
-              <h3 className="text-2xl font-black text-slate-900">
+              <h3 className="h3-fluid text-slate-900 font-black">
                 Related Packaging Equipment
               </h3>
             </div>

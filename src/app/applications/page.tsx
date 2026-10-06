@@ -125,7 +125,7 @@ export default function ApplicationsPage() {
             <Package className="w-4 h-4 text-amber-400" />
             <span>Tailored Industrial Packaging Systems</span>
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white">
+          <h1 className="h1-fluid font-black tracking-tight text-white leading-tight">
             Industry Applications We Serve
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto">
